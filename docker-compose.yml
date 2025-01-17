@@ -1,0 +1,33 @@
+volumes:
+  mongo-data:
+
+services:
+  mongo:
+    container_name: mongo-db
+    image: mongo
+    restart: always
+    volumes:
+      - mongo-data:/data/db
+    ports:
+      - 27017:27017
+    env_file:
+      - .env
+
+  mongo-express:
+    container_name: mongo-express-ui
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    env_file:
+      - .env
+
+  django:
+    container_name: django-app
+    build: weather_lens
+    ports:
+      - 8000:8000
+    env_file:
+      - .env
+    depends_on:
+      - mongo

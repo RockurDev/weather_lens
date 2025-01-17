@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Data Visualization</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Weather Data Visualization</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                {% comment %} <li><a href="{% url 'data-table' %}">Data Table</a></li> {% endcomment %}
+                <li><a href="{% url 'about' %}">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Weather Data Visualization</h1>
+        <div id="weather-graph"></div>
+        <script>
+            var graphData = {{ graph_json|safe }};
+            Plotly.newPlot('weather-graph', graphData.data, graphData.layout);
+        </script>
+    </main>
+    <footer>
+        <p>&copy; 2025 Weather Visualizer. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
