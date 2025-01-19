@@ -29,6 +29,8 @@
                             <th>Visibility (m)</th>
                             <th>Wind Speed (m/s)</th>
                             <th>Pressure (hPa)</th>
+                            <th>Humidity (%)</th>
+                            <th>Type</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -38,6 +40,8 @@
                             <td>{{ latest_summary.openweather.visibility }}</td>
                             <td>{{ latest_summary.openweather.wind_speed }}</td>
                             <td>{{ latest_summary.openweather.pressure }}</td>
+                            <td>{{ latest_summary.openweather.humidity }}</td>
+                            <td>{{ latest_summary.openweather.type }}</td>
                         </tr>
                         <tr>
                             <td>Yandex</td>
@@ -45,6 +49,8 @@
                             <td>{{ latest_summary.yandex.visibility }}</td>
                             <td>{{ latest_summary.yandex.wind_speed }}</td>
                             <td>{{ latest_summary.yandex.pressure }}</td>
+                            <td>{{ latest_summary.yandex.humidity }}</td>
+                            <td>{{ latest_summary.yandex.type }}</td>
                         </tr>
                     </tbody>
                 </table>
