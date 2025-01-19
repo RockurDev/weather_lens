@@ -1,7 +1,7 @@
 [project]
 name = "WeatherLens"
-version = "0.1.0"
-description = "Collect weather data and visualize it"
+version = "0.1.1"
+description = "The project provides weather data collection and visualisation"
 readme = "README.md"
 requires-python = "~=3.10"
 dependencies = [
